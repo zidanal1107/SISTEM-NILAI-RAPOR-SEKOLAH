@@ -6,12 +6,9 @@ function showPage(id) {
 }
 
 function predikat(nilai) {
-    if (nilai >= 90) return "A+";
-    if (nilai >= 85) return "A";
-    if (nilai >= 80) return "A-";
-    if (nilai >= 75) return "B+";
-    if (nilai >= 70) return "B";
-    if (nilai >= 65) return "B-";
+    if (nilai >= 80) return "A";
+    if (nilai >= 70) return "B+";
+    if (nilai >= 65) return "B";
     if (nilai >= 60) return "C+";
     if (nilai >= 50) return "C";
     if (nilai >= 40) return "D";
