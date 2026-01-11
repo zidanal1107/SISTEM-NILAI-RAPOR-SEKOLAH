@@ -48,7 +48,6 @@ function hapusData(index) {
     }
 }
 
-
 document.getElementById("nilai-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
