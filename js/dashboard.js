@@ -1,4 +1,5 @@
 let dataNilai = JSON.parse(localStorage.getItem("nilai")) || [];
+const admin = JSON.parse(localStorage.getItem("admin"));
 
 function showPage(id) {
     document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
