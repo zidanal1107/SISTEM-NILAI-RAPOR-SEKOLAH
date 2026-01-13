@@ -25,8 +25,10 @@ if (loginForm) {
 
             // pindah ke dashboard
             window.location.href = "dashboard.html";
-        } else {
-            alert("Username atau password salah!");
+        } else if (username !== akunAdmin.username) {
+            alert("Username salah!");
+        } else if (password !== akunAdmin.password) {
+            alert("Password salah!");
         }
     });
 }
