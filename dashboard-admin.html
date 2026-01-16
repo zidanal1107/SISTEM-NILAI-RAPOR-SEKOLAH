@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="css/dashboard-admin.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>ADMIN</h2>
+        <button onclick="showPage('presensi')">📝 Presensi</button>
+        <button onclick="showPage('jadwal')">📅 Jadwal</button>
+        <button onclick="showPage('nilai')">📊 Input Nilai</button>
+        <button class="logout" onclick="logout()">🚪 Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <h1>Dashboard Admin</h1>
+
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkSwitch">
+                <label for="darkSwitch"></label>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- PRESENSI -->
+            <div id="presensi" class="page active">
+                <h2>History Presensi Siswa</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Tanggal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataPresensi">
+                        <tr><td colspan="2">Belum ada presensi</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- JADWAL -->
+            <div id="jadwal" class="page">
+                <h2>Jadwal Pelajaran</h2>
+                <ul>
+                    <li>Senin : Matematika, IPA</li>
+                    <li>Selasa : Bahasa Indonesia, IPS</li>
+                    <li>Rabu : Bahasa Inggris</li>
+                    <li>Kamis : PJOK</li>
+                    <li>Jumat : Agama</li>
+                </ul>
+            </div>
+
+            <!-- NILAI -->
+            <div id="nilai" class="page">
+                <h2>Input Nilai Siswa</h2>
+
+                <form id="formNilai">
+                    <input type="text" id="namaSiswa" placeholder="Nama Siswa" required>
+                    <input type="text" id="mapel" placeholder="Mata Pelajaran" required>
+                    <input type="number" id="nilaiSiswa" placeholder="Nilai" required>
+                    <button type="submit">Simpan Nilai</button>
+                </form>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Mapel</th>
+                            <th>Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataNilai">
+                        <tr><td colspan="3">Belum ada nilai</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<script src="js/dashboard-admin.js"></script>
+
+<script>
+if (localStorage.getItem("role") !== "admin") {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

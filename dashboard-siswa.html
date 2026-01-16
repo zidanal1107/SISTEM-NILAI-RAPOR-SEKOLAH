@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Siswa</title>
+    <link rel="stylesheet" href="css/dashboard-siswa.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>SISWA</h2>
+        <button onclick="showPage('nilai')">📊 Nilai</button>
+        <button onclick="showPage('jadwal')">📅 Jadwal</button>
+        <button onclick="showPage('absen')">📝 Absen</button>
+        <button class="logout" onclick="logout()">🚪 Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <h1>Dashboard Siswa</h1>
+
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkSwitch">
+                <label for="darkSwitch"></label>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <div id="nilai" class="page active">
+                <h2>Nilai Akademik</h2>
+                <table>
+                    <tr>
+                        <th>Mata Pelajaran</th>
+                        <th>Nilai</th>
+                    </tr>
+                    <tr><td>Matematika</td><td>85</td></tr>
+                    <tr><td>Bahasa Indonesia</td><td>90</td></tr>
+                    <tr><td>IPA</td><td>88</td></tr>
+                </table>
+            </div>
+
+            <div id="jadwal" class="page">
+                <h2>Jadwal Pelajaran</h2>
+                <ul>
+                    <li>Senin : Matematika, IPA</li>
+                    <li>Selasa : Bahasa Indonesia, IPS</li>
+                    <li>Rabu : Bahasa Inggris</li>
+                    <li>Kamis : PJOK</li>
+                    <li>Jumat : Agama</li>
+                </ul>
+            </div>
+
+            <div id="absen" class="page">
+                <h2>Absen Hari Ini</h2>
+                <button onclick="absen()">Absen Sekarang</button>
+                <p id="statusAbsen"></p>
+            </div>
+
+        </section>
+    </main>
+
+</div>
+
+<script src="js/dashboard-siswa.js"></script>
+
+<script>
+if (localStorage.getItem("role") !== "siswa") {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
